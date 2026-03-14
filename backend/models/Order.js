@@ -8,7 +8,11 @@ const orderSchema = new mongoose.Schema({
   address: String,
   orderDate: Date,
   deliveryDate: String,
-  status: Number,
+  status: { type: String, default: "Pending" }, // Pending, Accepted, Shipped, Delivered
+  paymentMethod: { type: String, enum: ["COD", "UPI"], required: true },
+  transactionId: { type: String, default: null }, // Required for UPI
+  deliveryCharge: { type: Number, default: 0 },
+  orderId: { type: String, required: true }
 }, { timestamps: true });
 
 module.exports = mongoose.model("Order", orderSchema);
