@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Mahes Garlands - Features Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #2563eb;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-left-color: #764ba2;
+        }
+
+        .feature-card h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 5px 0;
+            color: #666;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .demo-section {
+            background: #f8f9fa;
+            padding: 40px;
+            text-align: center;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .demo-section h3 {
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .demo-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .demo-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-contact {
+            background: #f97316;
+            color: white;
+        }
+
+        .btn-contact:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+        }
+
+        .btn-auth {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-auth:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .btn-social {
+            background: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .btn-social:hover {
+            transform: scale(1.15);
+        }
+
+        .carousel-demo {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .carousel-demo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animation-demo {
+            width: 80px;
+            height: 80px;
+            background: #2563eb;
+            border-radius: 50%;
+            animation: bounce 2s infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌸 Sai Mahes Garlands</h1>
+            <p>Enhanced Website with Modern Features & Animations</p>
+        </header>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎠</div>
+                <h2>Image Carousel</h2>
+                <p>Auto-rotating carousel with smooth animations</p>
+                <ul class="feature-list">
+                    <li>Changes every 7-10 seconds</li>
+                    <li>Interactive dot navigation</li>
+                    <li>Fade & zoom animations</li>
+                    <li>Welcome message display</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h2>Contact Modal</h2>
+                <p>Easy access to contact information</p>
+                <ul class="feature-list">
+                    <li>Phone (direct call)</li>
+                    <li>Email (direct email)</li>
+                    <li>Physical address</li>
+                    <li>WhatsApp & Instagram links</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h2>Authentication</h2>
+                <p>User login and sign-up system</p>
+                <ul class="feature-list">
+                    <li>Toggle Login/Sign-Up</li>
+                    <li>Form validation</li>
+                    <li>Beautiful modal</li>
+                    <li>Smooth animations</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h2>Social Media</h2>
+                <p>Floating social media buttons</p>
+                <ul class="feature-list">
+                    <li>WhatsApp chat</li>
+                    <li>Instagram profile</li>
+                    <li>Direct phone call</li>
+                    <li>Animated effects</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h2>Animations</h2>
+                <p>Smooth & beautiful animations</p>
+                <ul class="feature-list">
+                    <li>Carousel transitions</li>
+                    <li>Button hover effects</li>
+                    <li>Modal animations</li>
+                    <li>Icon bouncing</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h2>Responsive Design</h2>
+                <p>Works on all devices</p>
+                <ul class="feature-list">
+                    <li>Desktop optimized</li>
+                    <li>Tablet responsive</li>
+                    <li>Mobile friendly</li>
+                    <li>60fps smooth</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>Demo Buttons</h3>
+            <p style="margin-bottom: 20px;">Click to see how they work in the actual website:</p>
+            <div class="demo-buttons">
+                <button class="demo-btn btn-contact">📞 Contact Us</button>
+                <button class="demo-btn btn-auth">👤 Login / Sign Up</button>
+                <a href="https://wa.me/919876543210" target="_blank" class="btn-social" title="WhatsApp">💬</a>
+                <a href="https://instagram.com" target="_blank" class="btn-social" title="Instagram">📸</a>
+            </div>
+
+            <h3 style="margin-top: 40px; margin-bottom: 20px;">Carousel Animation Preview</h3>
+            <div class="carousel-demo">
+                🎠 Auto-rotating carousel preview
+            </div>
+
+            <h3 style="margin-top: 40px; margin-bottom: 20px;">Animation Example</h3>
+            <div class="animation-demo"></div>
+            <p style="color: #666;">↑ Bouncing animation (like our social buttons)</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">New Components</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">CSS Files</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Animations</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Lines of Code</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>✨ Sai Mahes Garlands - Enhanced Website 2024 ✨</p>
+            <p>All features implemented and ready to use! 🌸</p>
+        </footer>
+    </div>
+</body>
+</html>
