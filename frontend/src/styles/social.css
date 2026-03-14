@@ -1,0 +1,144 @@
+/* Social Links Floating Styles */
+.social-links-container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+  animation: slideInRight 0.6s ease;
+}
+
+.social-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-link-btn:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.social-link-btn:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.social-link-btn:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.social-link-btn:hover {
+  transform: scale(1.15) rotate(-15deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.social-link-btn:active {
+  transform: scale(0.95);
+}
+
+.social-icon {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+.social-link-btn:hover .social-icon {
+  animation: rubberBand 0.6s ease;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes rubberBand {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+  40% {
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+  50% {
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+  65% {
+    transform: scaleX(0.95) scaleY(1.05);
+  }
+  75% {
+    transform: scaleX(1.05) scaleY(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .social-links-container {
+    right: 15px;
+    bottom: 15px;
+    gap: 10px;
+  }
+
+  .social-link-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links-container {
+    right: 10px;
+    bottom: 10px;
+    gap: 8px;
+  }
+
+  .social-link-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}

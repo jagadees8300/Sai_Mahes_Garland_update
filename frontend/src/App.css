@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #6d28d9;
+  /* Deep Purple */
+  --secondary-color: #db2777;
+  /* Vibrant Pink */
+  --accent-color: #facc15;
+  /* Gold */
+  --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+}
+
+body {
+  font-family: 'Inter', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(219, 39, 119, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(219, 39, 119, 0);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Advanced Button Styles */
+button {
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* General app buttons (excluding specific nav/modal buttons) */
+button:not(.contact-btn):not(.auth-btn):not(.social-btn):not(.social-link-btn):not(.dot):not(.modal-close):not(.auth-close):not(.toggle-btn):not(.submit-btn):not(.logout-btn) {
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3);
+}
+
+button:not(.contact-btn):not(.auth-btn):not(.social-btn):not(.social-link-btn):not(.dot):not(.modal-close):not(.auth-close):not(.toggle-btn):not(.submit-btn):not(.logout-btn):hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(219, 39, 119, 0.4);
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Premium Card Styles (Glassmorphism & Picture Frame) */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+/* Stagger card animations */
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(109, 40, 217, 0.15);
+  border-color: rgba(219, 39, 119, 0.3);
+}
+
+/* Picture Frame styling for Card Images */
+.card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  /* Picture Frame Effect */
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.2),
+    /* Inner shadow */
+    0 4px 15px rgba(0, 0, 0, 0.1),
+    /* Outer drop */
+    0 0 0 8px #fff,
+    /* Inner matting */
+    0 0 0 10px var(--accent-color);
+  /* Outer gold frame */
+  margin-bottom: 20px;
+}
+
+.card:hover .card-img {
+  transform: scale(1.05);
+  /* Hover frame color shift */
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.2),
+    0 8px 25px rgba(219, 39, 119, 0.3),
+    0 0 0 8px #fff,
+    0 0 0 10px var(--secondary-color);
+}
+
+.price {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 10px 0;
+  display: block;
+}
+
+/* Product Details Page Setup */
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Large Picture Frame for Details Page */
+.details-img-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.details-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 0 0 15px #fff,
+    0 0 0 20px #d4af37;
+  /* Thick Gold Frame */
+  transition: transform 0.4s ease;
+}
+
+.details-img:hover {
+  transform: scale(1.02);
+}
+
+.details-info {
+  text-align: left;
+  flex: 1;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (min-width: 769px) {
+  .details-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .details {
+    padding: 30px 15px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-img {
+    height: 300px;
+  }
+}
