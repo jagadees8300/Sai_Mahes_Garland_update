@@ -329,9 +329,91 @@ const products = [
     price: 3999,
     description: "Affordable price with luxury appeal."
   },
-  
- 
-  
+  {
+    id: 47,
+    name: "Majestic 50 Rose Bouquet 🌹",
+    image: "/images/majestic-50-red-roses-bouquet_1.jpg",
+    price: 2499,
+    description: "Affordable price with luxury appeal."
+  },
+ {
+    id: 48,
+    name: "Timeless Love Roses Bouquet 🌹",
+    image: "/images/timeless-love-red-roses-bouquet_1.jpg",
+    price: 799,
+    description: "Affordable price with luxury appeal."
+  },
+  {
+    id: 49,
+    name: "Yellow Roses Bouquet 🌹",
+    image: "/images/serene-6-yellow-roses-bunch_1.jpg",
+    price: 549,
+    description: "Affordable price with luxury appeal."
+  },
+  {
+    id: 50,
+    name: "Yellow Roses Bouquet 🌹",
+    image: "/images/mesmerizing-love-pink-roses-bouquet_1 (1).jpg",
+    price: 799,
+    description: "Affordable price with luxury appeal."
+  },
+  {
+    id: 51,
+    name: "Valentine's Day Red Rose Bouquet 🌹",
+    image: "/images/valentines-day-red-rose-bouquet_1.jpg",
+    price: 349,
+    description: "Affordable price with luxury appeal."
+  },
+  {
+    id: 52,
+    name: "Baby Pink Rose Bouquet 🌹",
+    image: "/images/1632393015_115.jpg",
+    price: 1249,
+    description: "Affordable price with luxury appeal."
+  },
+  {
+    id: 53,
+    name: " Bouquet of Blue Orchids 🌹",
+    image: "/images/orchid.jpg",
+    price: 1649,
+    description: "Affordable price with luxury appeal."
+  },
+ {
+    id: 54,
+    name: " Bouquet of Blue Orchids 🌹",
+    image: "/images/chocolates.jpg",
+    price: 1049,
+    description: "Affordable price with luxury appeal."
+  },
+  {
+    id: 55,
+    name: " Bouquet of Blue Orchids 🌹",
+    image: "/images/BlueOrchids.jpg",
+    price: 2199,
+    description: "Handcrafted with high-quality durable materials."
+  },
+  {
+    id: 56,
+    name: " Love Rose & Baby Pink Bouquet  🌹",
+    image: "/images/love.jpg",
+    price: 2999,
+    description: "Handcrafted with high-quality durable materials."
+  },
+  {
+    id: 57,
+    name: "Purple Orchids Bouquet  🌹",
+    image: "/images/perple.jpg",
+    price: 899,
+    description: "Handcrafted with high-quality durable materials."
+  },
+  {
+    id: 58,
+    name: "Red Roses Chocolates Bouquet 🌹",
+    image: "/images/RedRosesChocolates.jpg",
+    price: 1649,
+    description: "Handcrafted with high-quality durable materials."
+  },
+
 
 
 
