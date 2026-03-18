@@ -12,7 +12,7 @@ function Home() {
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="hero-title">Elegance in Every <span className="highlight">Garland</span></h1>
-          <p className="hero-subtitle">Handcrafted with love and devotion since 2005. Discover our premium collection for your special occasions.</p>
+          <p className="hero-subtitle">Handcrafted with love and devotion since 1999. Discover our premium collection for your special occasions.</p>
           <button className="hero-btn" onClick={() => window.scrollTo({ top: document.querySelector('.products-section').offsetTop, behavior: 'smooth' })}>
             Explore Collection
           </button>

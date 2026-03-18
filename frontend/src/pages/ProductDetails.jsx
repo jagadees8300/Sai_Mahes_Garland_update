@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import products from "../data/products";
 import { CartContext } from "../context/CartContext";
+import ReviewSection from "../components/ReviewSection";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -21,14 +22,11 @@ function ProductDetails() {
   }
 
   const handleAddToCart = () => {
-    // Basic auth check for Flipkart-like experience
     const user = localStorage.getItem('user');
     if (!user) {
       alert("Please login to add items to your cart.");
-      // Could open auth modal here in a real app
       return;
     }
-    // Add to global cart context
     addToCart(product);
   };
 
@@ -38,9 +36,7 @@ function ProductDetails() {
       alert("Please login to proceed with purchase.");
       return;
     }
-    // Add to cart and immediately open checkout (mocked here)
     addToCart(product);
-    // Note: addToCart already opens the cart panel
   };
 
   return (
@@ -93,6 +89,9 @@ function ProductDetails() {
         </div>
 
       </div>
+
+      {/* Ratings & Reviews Section */}
+      <ReviewSection productId={product.id} />
     </div>
   );
 }

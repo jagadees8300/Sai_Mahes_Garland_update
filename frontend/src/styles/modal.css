@@ -150,6 +150,16 @@
   box-shadow: 0 6px 16px rgba(225, 48, 108, 0.4);
 }
 
+.social-btn.youtube {
+  background: #2563eb;
+}
+
+.social-btn.youtube:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
