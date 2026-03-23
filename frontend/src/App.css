@@ -250,6 +250,25 @@ button:not(.contact-btn):not(.auth-btn):not(.social-btn):not(.social-link-btn):n
   .details {
     padding: 30px 15px;
     margin-top: 20px;
+    border-radius: 16px;
+  }
+
+  .details-img {
+    box-shadow:
+      inset 0 0 20px rgba(0, 0, 0, 0.1),
+      0 10px 20px rgba(0, 0, 0, 0.15),
+      0 0 0 10px #fff,
+      0 0 0 13px #d4af37;
+  }
+
+  /* Touch-friendly min height for buttons */
+  button {
+    min-height: 44px;
+  }
+
+  /* Remove tap highlight color on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -259,6 +278,40 @@ button:not(.contact-btn):not(.auth-btn):not(.social-btn):not(.social-link-btn):n
   }
 
   .card-img {
-    height: 300px;
+    height: 260px;
+    /* Reduced frame for mobile */
+    box-shadow:
+      inset 0 0 15px rgba(0, 0, 0, 0.15),
+      0 3px 10px rgba(0, 0, 0, 0.08),
+      0 0 0 5px #fff,
+      0 0 0 7px var(--accent-color);
+    margin-bottom: 15px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .details {
+    padding: 20px 12px;
+    margin-top: 15px;
+    border-radius: 12px;
+  }
+
+  .details-info {
+    padding: 10px 0;
+  }
+
+  .details-img {
+    box-shadow:
+      inset 0 0 15px rgba(0, 0, 0, 0.1),
+      0 8px 15px rgba(0, 0, 0, 0.1),
+      0 0 0 8px #fff,
+      0 0 0 10px #d4af37;
   }
 }

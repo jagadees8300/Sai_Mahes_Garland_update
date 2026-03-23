@@ -87,13 +87,12 @@ function Footer() {
           </div>
 
           <p className="footer-tagline">
-            "Handcrafted with love and devotion since 2005. Making your special occasions memorable with premium garlands."
+            "Handcrafted with love and devotion since 1999. Making your special occasions memorable with premium garlands."
           </p>
 
           <div className="footer-hours">
             <p className="footer-hours-title">🕐 Business Hours</p>
-            <p className="footer-hours-text">Mon - Sat: 6:00 AM - 9:00 PM</p>
-            <p className="footer-hours-text">Sunday: 6:00 AM - 1:00 PM</p>
+            <p className="footer-hours-text">Open 24/7 — We're always here for you!</p>
           </div>
         </div>
       </div>

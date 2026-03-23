@@ -166,3 +166,38 @@
     border-color: var(--primary-color) !important;
     box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cart-slideout {
+        max-width: 85vw;
+    }
+
+    .cart-header h2 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-slideout {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .cart-items {
+        padding: 15px;
+    }
+
+    .cart-item-img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .cart-footer {
+        padding: 15px;
+    }
+
+    .cart-total {
+        font-size: 1rem;
+    }
+}

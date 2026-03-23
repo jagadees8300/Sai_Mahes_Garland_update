@@ -58,17 +58,18 @@ function AdminDashboard() {
 
     return (
         <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 20px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
-                <h2>Admin Dashboard - Order Management</h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
+                <h2 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.5rem)', margin: 0 }}>Admin Dashboard - Order Management</h2>
                 <button 
                   onClick={logout} 
-                  style={{ padding: '8px 16px', background: '#ef4444', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+                  style={{ padding: '8px 16px', background: '#ef4444', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', minHeight: '44px' }}>
                   Logout
                 </button>
             </div>
 
             <div style={{ background: 'white', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', overflow: 'hidden' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '700px' }}>
                     <thead style={{ background: '#f8fafc', borderBottom: '2px solid #e2e8f0' }}>
                         <tr>
                             <th style={{ padding: '15px' }}>Date</th>
@@ -113,7 +114,7 @@ function AdminDashboard() {
                                         <select 
                                             value={o.status} 
                                             onChange={(e) => updateStatus(o._id, e.target.value)}
-                                            style={{ padding: '6px', borderRadius: '4px', border: '1px solid #cbd5e1' }}
+                                            style={{ padding: '6px', borderRadius: '4px', border: '1px solid #cbd5e1', minHeight: '44px' }}
                                         >
                                             <option value="Pending">Pending</option>
                                             <option value="Accepted">Accepted</option>
@@ -126,6 +127,7 @@ function AdminDashboard() {
                         )}
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     );

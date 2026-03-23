@@ -6,6 +6,7 @@ import "../styles/navbar.css";
 
 function Navbar() {
   const [user, setUser] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { getCartCount, setIsCartOpen } = useContext(CartContext);
 
   useEffect(() => {
@@ -14,7 +15,6 @@ function Navbar() {
       setUser(JSON.parse(storedUser));
     }
 
-    // Listen for custom auth event to update nav without refresh
     const handleAuth = () => {
       const updatedUser = localStorage.getItem('user');
       setUser(updatedUser ? JSON.parse(updatedUser) : null);
@@ -31,6 +31,8 @@ function Navbar() {
     window.dispatchEvent(new Event('auth-change'));
   };
 
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -39,9 +41,18 @@ function Navbar() {
           <h1 className="brand-text">Sai Mahes Garlands <span className="since-text" style={{ fontSize: '0.4em', verticalAlign: 'middle', marginLeft: '8px', opacity: 0.8 }}>Since 2005</span></h1>
         </div>
 
-        <div className="navbar-actions" style={{ alignItems: 'center' }}>
-          <a href="/youtube" className="nav-link" style={{ marginRight: 20 }}>YouTube</a>
-          <a href="/admin/login" className="nav-link" style={{ 
+        {/* Hamburger Button — visible only on mobile via CSS */}
+        <button
+          className="hamburger-btn"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? '✕' : '☰'}
+        </button>
+
+        <div className={`navbar-actions ${isMobileMenuOpen ? 'mobile-open' : ''}`} style={{ alignItems: 'center' }}>
+          <a href="/youtube" className="nav-link" onClick={closeMobileMenu} style={{ marginRight: 20 }}>YouTube</a>
+          <a href="/admin/login" className="nav-link" onClick={closeMobileMenu} style={{ 
             marginRight: 20, 
             fontWeight: '900', 
             background: 'linear-gradient(90deg, #8b5cf6, #ec4899, #f43f5e)',
@@ -64,7 +75,7 @@ function Navbar() {
           {/* Cart Icon */}
           <button
             className="cart-btn"
-            onClick={() => setIsCartOpen(true)}
+            onClick={() => { setIsCartOpen(true); closeMobileMenu(); }}
             style={{ position: 'relative', background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.5rem', marginRight: '10px' }}
           >
             🛒

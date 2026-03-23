@@ -131,7 +131,8 @@
 
 @media (max-width: 480px) {
   .social-links-container {
-    right: 10px;
+    right: auto;
+    left: 10px;
     bottom: 10px;
     gap: 8px;
   }

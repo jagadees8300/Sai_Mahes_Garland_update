@@ -178,6 +178,26 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: 50vh;
+    padding: 40px 15px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-btn {
+    padding: 14px 35px;
+    font-size: 1rem;
+  }
+
   .carousel-section {
     padding: 15px;
   }
@@ -199,6 +219,26 @@
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    min-height: 45vh;
+    padding: 30px 12px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-btn {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+
   .carousel-section {
     padding: 10px;
   }
